@@ -11,7 +11,7 @@ class complex;
 template <typename T>
 complex<T>& __doapl(complex<T>* ths, const complex<T>& r);
 
-// 测试类中<>
+// 1. 测试类中<>
 template <typename T>
 void print(const complex<T>& c);
 
@@ -21,12 +21,12 @@ private:
     T re, im;
     friend complex& __doapl<>(complex* ths, const complex&);
     friend void print<>(const complex& c);
-    // 注意下面友元的错误用法
+    // 1-1. 注意下面友元的错误用法
     // friend void print(const complex& c);
 public:
     // =====================================================================
     // 有参函数的初始化列表
-    // *************explicit 禁止隐士转换！！！！！*****************************
+    // 2. *************explicit 禁止隐士转换！！！！！*****************************
     explicit complex(T r=0, T i=0): re(r), im(i) {
         // 这里是赋值比初始化列表效率低多一个步骤
         // this.re = r;
@@ -42,10 +42,10 @@ public:
         return *this;
     }
 
-    // 当有全局和类中都重载了运算符优先类中的重载
+    // 3. 当有全局和类中都重载了运算符优先类中的重载
     complex& operator+(const complex&);
 
-    // 由于类中重载运算符只有一个参数的情况
+    // 4. 由于类中重载运算符只有一个参数的情况
     // 只能作为     operator+(T, const complex<T>&)
     // 而无法作为   operator+(const complex<T>&, T)
     // complex& operator+(T other) {
@@ -58,15 +58,15 @@ public:
         return complex(-re, -im);
     }
 
-    // 本体中编译器会尽量做到inline,简单函数
+    // 5. 本体中编译器会尽量做到inline,简单函数
     // 同名函数重载
-    T real() const { return re; }      // ?real@Complex@QBENXZ 函数编译后的实际名称
+    T real() const { return re; }      // 6-1. ?real@Complex@QBENXZ 函数编译后的实际名称
     complex& real(T r) { 
         this->re = r;
         return *this;   // 可以进行链式调用形如 c.real(1.0).imag(2.0)
-    }                                       // ?real@Complex@AENABN@Z
+    }                                       // 6-2. ?real@Complex@AENABN@Z
 
-    // class中方法有会改变和不改变2种分类
+    // 7. class中方法有会改变和不改变2种分类
     // const
     T imag() const { return im; }
 
@@ -108,7 +108,7 @@ inline void print(const complex<T>& c) {
 }
 
 template<class T>
-// 返回为局部生成的complex临时对象所以无法返回引用
+// 8. 返回为局部生成的complex临时对象所以无法返回引用
 inline complex<T> operator+(const complex<T>& ths, const complex<T>& other) {
     cout << "global+" << endl;
     // 返回的是临时complex对象 -> typename();
@@ -136,7 +136,7 @@ inline complex<T> operator-(const complex<T>& ths, const complex<T>& other) {
     return complex<T>(ths.real()-other.real(), ths.imag()-other.imag());
 }
 
-// 正号根据参数个数判断
+// 9. 正号根据参数个数判断
 // 为什么返回不是引用
 template<class T>
 inline complex<T> operator+(const complex<T>& ths) {
@@ -171,7 +171,7 @@ inline bool operator==(T other, const complex<T>& ths) {
 //!= 重载
 // ...
 
-// 重载<<
+// 10. 重载<<
 template<class T>
 ostream& operator<<(ostream& os, const complex<T>& ths) {
     return os << "(" << ths.real() << "," << ths.imag() << "i)";
