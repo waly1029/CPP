@@ -36,6 +36,8 @@ int main() {
     cout << (double(0)==c6) << endl;
 
     cout << c5 << c5.conj() << endl;
+    c5 += double(0.55);
+    cout << c5 << c5.conj() << endl;
 
     return 0;
 }

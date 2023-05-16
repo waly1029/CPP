@@ -37,6 +37,10 @@ public:
     // =====================================================================
 
     complex& operator+=(const complex&);
+    complex& operator+=(T value) {
+        this->re += value;
+        return *this;
+    }
 
     // 当有全局和类中都重载了运算符优先类中的重载
     complex& operator+(const complex&);
