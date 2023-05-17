@@ -1,5 +1,6 @@
 #ifndef MYSTRING_H
 #define MYSTRING_H
+
 #include <string>
 #include <iostream>
 
@@ -30,6 +31,7 @@ inline
 // MyString(const char* cstr = nullptr);
 MyString::MyString(const char* cstr) {
     if(cstr) {
+        // strlen不会记录\0长度
         m_data = new char[strlen(cstr) + 1];
         // strcpy会默认拷贝上最后的\0
         strcpy(m_data, cstr);

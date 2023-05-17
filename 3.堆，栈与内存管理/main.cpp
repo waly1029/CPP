@@ -45,5 +45,11 @@ int main() {
 
     // delete b;
 
+    Test* t = new Test[3];
+    // 只会删除第一个指针，后面的指针会内存泄露
+    // delete t;
+    
+    delete []t;
+
     return 0;
 }
