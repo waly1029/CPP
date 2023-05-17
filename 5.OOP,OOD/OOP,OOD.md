@@ -4,7 +4,7 @@
 
 ·Delegation （委托）
 
-#Composition（组合），表示has-a
+<p style="font-size: 20px;">#Composition（组合），表示has-a</p>
 
 
 queue◆-->deque
