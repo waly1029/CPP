@@ -1,10 +1,14 @@
 ·Inheritance（继承）
+
 ·Composition（组合）
+
 ·Delegation （委托）
 
 #Composition（组合），表示has-a
 
+
 queue◆-->deque
+
 ```C++
 template <class T>
 class queue{
@@ -24,13 +28,17 @@ public:
 ```
 
 Container◆-->Component
+
 ·构造由内而外
+
 Container::Container(...):Component() {...};
+
 ·析构有外而内
+
 Container::~Container(...) {... ~Component()};
 
-
 Delegation（委托）/ Composition by reference
+
 ·String◇-->StringRep
 
 ```C++ Standard
