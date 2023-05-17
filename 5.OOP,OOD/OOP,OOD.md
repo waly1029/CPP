@@ -4,7 +4,7 @@
 
 ·Delegation （委托）
 
-<p style="font-size: 200px;">#Composition（组合），表示has-a</p>
+#Composition（组合），表示has-a
 
 
 queue◆-->deque
@@ -52,7 +52,7 @@ public:
     String& operator=(const String& s);
     ~String();
 private:
-    StringRep* rep; // pimpl 委托
+    StringRep* rep; // pimpl （Handle/Body）
 };
 ```
 
@@ -70,4 +70,21 @@ char* rep;
 }
 
 String::String() { ... }
+```
+
+
+·Inheritance（继承），表示is-a
+
+```C++
+struct _List_node_base
+{
+    _List_node_base* _M_next;
+    _List_node_base* _M_prev;
+};
+
+template<typename _Tp>
+struct _List_node : public _List_node_base
+{
+    _Tp _M_data;
+};
 ```
