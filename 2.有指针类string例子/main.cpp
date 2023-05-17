@@ -18,7 +18,6 @@ int main() {
 
     cout << s2 << endl;
     cout << *p << endl;
-    
     delete p;
 
 
