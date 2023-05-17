@@ -2,7 +2,7 @@
 ·Composition（组合）
 ·Delegation （委托）
 
-##Composition（组合），表示has-a
+#Composition（组合），表示has-a
 
 queue◆-->deque
 
@@ -18,7 +18,7 @@ public:
     size_type size() const { return c.size(); }
     reference front() { return c.front(); }
     reference back() { return c.back(); }
-    //
+    // 
     void push(const value_type& x) { c.push_back(x); }
     void pop() { c.pop_front(); }
 };
