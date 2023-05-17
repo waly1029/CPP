@@ -2,7 +2,7 @@
 ·Composition（组合）
 ·Delegation （委托）
 
-###Composition（组合），表示has-a
+##Composition（组合），表示has-a
 
 queue◆-->deque
 
