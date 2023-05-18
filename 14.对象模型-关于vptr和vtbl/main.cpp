@@ -86,6 +86,18 @@ namespace lz01{
         // ||
         // (*p->vptr[n])(p);
     }
+
+    void process2(){
+        B b;
+        A a = (A)b;
+        a.vfunc1();
+
+        A* pa = new B;
+        pa->vfunc1();
+
+        pa = &b;
+        pa->vfunc1();
+    }
 }
 
 int main() {
