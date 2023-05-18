@@ -25,5 +25,7 @@ int main() {
 
     std::pair<Base1, Base2> p3(std::pair<Derived1, Derived2>());
 
+    std::cout << __cplusplus << std::endl;
+
     return 0;
 }
