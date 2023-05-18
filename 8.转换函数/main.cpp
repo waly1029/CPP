@@ -6,9 +6,11 @@ using namespace std;
 int main() {
 
     Fraction f(3, 5);
-    double d = f + 4;
+    double d = f + 4;   // 调用 Fraction::operator double();
+    double dd = 4 + f;
 
-    cout << f << endl;
+    cout << d << endl;
+    cout << dd << endl;
 
     return 0;
 }
