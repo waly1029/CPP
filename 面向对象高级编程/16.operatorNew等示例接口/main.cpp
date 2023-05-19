@@ -60,5 +60,6 @@ int main() {
     // ::delete pf2;               // void ::operator delete(void*);
 
 
+    cout << __cplusplus << endl;
     return 0;
 }
