@@ -267,7 +267,6 @@ namespace ex06{
 
 
 int main () {
-
     // ex01::func1();
     // ex02::test();
     // ex03::test_max_initializer_list();
