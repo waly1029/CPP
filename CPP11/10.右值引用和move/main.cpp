@@ -108,9 +108,9 @@ namespace ex02{
         std::cout << "size()= " << c1.size() << std::endl;
         output_static_data(*(c1.begin()));
 
-        // M c11(c1);
-        // M c12(std::move(c1));        // 确定以后不使用这个变量利用move
-        // c11.swap(c12);
+        M c11(c1);
+        M c12(std::move(c1));        // 确定以后不使用这个变量利用move
+        c11.swap(c12);
     }
 
 }
