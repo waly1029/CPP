@@ -11,4 +11,4 @@ re_tree提供两种insertion操作：**insert_unique()**和**insert_equal()**。
 前者表示节点的key一定在整个tree中独一无二，否则安插失败。
 后者表示节点的key可重复。
 
-<span style="color:red;">红色文字</span>
+<font color=red>我是红色</font>
