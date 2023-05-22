@@ -1,6 +1,7 @@
 ## 先谈 operator new() 和 malloc()
 
 ### malloc()分配的内存比申请的更多
+free找到cookie中记录的数据释放内存
 ![malloc](./malloc内存分配.jpg)
 
 vc6对allocator的使用
@@ -36,4 +37,10 @@ VC6+的allocator只是以::operator new 和 ::operator delete 完成allocate() �
 int* p = allocator<int>().allocate(512, (int*)0);
 allocator<int>().deallocate(p, 512);
 ```
+
+
 ![allocator](./分配器.jpg)
+#0 - 8 bytes
+#1 - 16 bytes
+...
+尽量减少malloc次数，减少内存分配时例如cookie的数量，尤其对于容器来说每个元素大小相同。
