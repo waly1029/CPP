@@ -1,4 +1,7 @@
 #include <iostream>
+#include <list>
+
+using namespace std;
 
 int main() {
     int i(6);
@@ -21,6 +24,8 @@ int main() {
 
 
     std::cout << i << std::endl;
+
+    cout << sizeof(list<char>) << endl;
 
     return 0;
 }
