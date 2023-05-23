@@ -19,7 +19,9 @@ int main(){
     // container
 
     // TODO: 实现bind2nd,not1
-    cout << count_if(vi.begin(), vi.end(), not1(bind2nd(less<int>(), 40))); // >= 40
+    // cout << count_if(vi.begin(), vi.end(), not_fn(bind(less<int>(), 40))); // >= 40
+    cout << count_if(vi.begin(), vi.end(), std::not_fn(std::function<bool(int)>(std::bind(std::less<int>(), std::placeholders::_1, 40))));
+
     // vi.begin(): iterator
     // count_if: algorithm
     // not1: function adapter(negator)
