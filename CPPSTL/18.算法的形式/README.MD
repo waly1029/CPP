@@ -1,0 +1,1 @@
+![algorithm](./images/%20whatisalgorithm.jpg)
